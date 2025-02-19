@@ -1,0 +1,63 @@
+#links {
+    display: grid;
+    grid-template-columns: 6rem auto;
+}
+
+#links dt {
+    grid-column: 1;
+    text-align: right;
+    margin: 0 0 0.5rem 0;
+}
+
+#links dd {
+    grid-column: 2;
+    margin: 0 0 0.5rem 2.5rem;
+}
+
+#links dd>svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: -0.25rem 0 -0.25rem -1.75rem;
+    display: inline-block;
+}
+#links dd>svg+svg {
+    margin: auto;
+}
+
+
+body {
+    font: 1rem sans-serif;
+}
+
+h1 {
+    font-style: italic;
+    font-family: serif;
+}
+
+pre, code {
+    font-family: monospace;
+}
+
+
+html, body {
+    color: white;
+    background-color: #222;
+}
+
+dt {
+    color: magenta;
+}
+
+a {
+    color: cyan;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+svg>path {
+    fill: yellow;
+}
