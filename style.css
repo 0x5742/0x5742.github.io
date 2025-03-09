@@ -1,3 +1,50 @@
+/* top-level positioning */
+
+html {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#main {
+    margin: 0.5em 1em;
+}
+
+#tenari {
+    align-self: flex-end;
+    margin-left: auto;
+    position: relative;
+}
+
+#tenari img {
+    width: auto;
+    max-height: 506px;
+    /* try to leave enough space for the text */
+    max-width: calc(100vw - 1rem);
+    margin-right: 1rem;
+}
+
+#tenari p {
+    transform-origin: bottom right;
+    transform: rotate(90deg);
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    margin: .5em .25em;
+    padding: 0;
+    text-wrap: nowrap;
+    overflow: hidden;
+}
+
+/* ----------------------------------------------------------------------------
+   main content grid (<dl id="links">) */
+
 #links {
     display: grid;
     grid-template-columns: 6rem auto;
@@ -25,8 +72,13 @@
 }
 
 
+/* ----------------------------------------------------------------------------
+   fonts and colors */
+
 body {
     font: 1rem sans-serif;
+    color: white;
+    background-color: #222;
 }
 
 h1 {
@@ -38,11 +90,6 @@ pre, code {
     font-family: monospace;
 }
 
-
-html, body {
-    color: white;
-    background-color: #222;
-}
 
 dt {
     color: magenta;
@@ -60,4 +107,24 @@ a:hover, a:active {
 
 svg>path {
     fill: yellow;
+}
+
+#tenari p, #tenari a {
+    transition: .2s all linear;
+}
+
+#tenari p {
+    color: #666;
+}
+
+#tenari a {
+    color: #999;
+}
+
+#tenari:hover p, #tenari:active p {
+    color: magenta;
+}
+
+#tenari:hover a, #tenari:active a {
+    color: cyan;
 }
