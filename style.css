@@ -24,7 +24,7 @@ body {
 
 #tenari img {
     width: auto;
-    max-height: 506px;
+    max-height: min(506px, 100svh);
     /* try to leave enough space for the text */
     max-width: calc(100vw - 1rem);
     margin-right: 1rem;
