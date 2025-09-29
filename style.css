@@ -1,20 +1,104 @@
-/* top-level positioning */
+body {
+    margin: 0.5em 1em;
+    font: 1rem sans-serif;
+    color: white;
+    background-color: #222;
+}
 
-html {
+pre, code {
+    font-family: monospace;
+}
+
+dt {
+    color: magenta;
+}
+
+a {
+    color: cyan;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    text-decoration: white underline;
+}
+
+/* mostly for landing page, but useful elsewhere too? */
+svg.icon>path, #links svg>path {
+    fill: yellow;
+}
+
+
+/* page title */
+
+h1 {
+    font: 2rem/2rem "The Girl Next Door", cursive;
+    padding: 0 .5rem;
+}
+
+/* decorative bits */
+h1 .prompt {
+    font-family: monospace;
+}
+h1 .prompt:before {
+    /* this 'should' just be blue, but css blue on black is too dim to be legible, especially for a single character. and if you're wondering why this is blue and not cyan, well, the username is cyan and the directory name is blue... and the directory is blue because that's the default for ls --color */
+    color: slateblue;
+    content: '~';
+}
+h1 .prompt:after {
+    color: magenta;
+    content: '>';
+}
+
+
+/* ----------------------------------------------------------------------------
+   landing page: list of links on left, art bit on bottom right */
+
+#landing {
     height: 100vh;
 }
 
-body {
+#landing body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     min-height: 100vh;
     margin: 0;
 }
-
-#main {
+#landing #main {
     margin: 0.5em 1em;
 }
+
+
+/* content grid (<dl id="links">) */
+
+#landing #links {
+    display: grid;
+    grid-template-columns: 6rem auto;
+}
+
+#landing #links dt {
+    grid-column: 1;
+    text-align: right;
+    margin: 0 0 0.5rem 0;
+}
+
+#landing #links dd {
+    grid-column: 2;
+    margin: 0 0 0.5rem 2.5rem;
+}
+
+#landing #links dd>svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: -0.25rem 0 -0.25rem -1.75rem;
+    display: inline-block;
+}
+#landing #links dd>svg+svg {
+    margin: auto;
+}
+
+
+/* art */
 
 #tenari {
     align-self: flex-end;
@@ -40,87 +124,6 @@ body {
     padding: 0;
     text-wrap: nowrap;
     overflow: hidden;
-}
-
-
-/* ----------------------------------------------------------------------------
-   main page content grid (<dl id="links">) */
-
-#links {
-    display: grid;
-    grid-template-columns: 6rem auto;
-}
-
-#links dt {
-    grid-column: 1;
-    text-align: right;
-    margin: 0 0 0.5rem 0;
-}
-
-#links dd {
-    grid-column: 2;
-    margin: 0 0 0.5rem 2.5rem;
-}
-
-#links dd>svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin: -0.25rem 0 -0.25rem -1.75rem;
-    display: inline-block;
-}
-#links dd>svg+svg {
-    margin: auto;
-}
-
-
-/* ----------------------------------------------------------------------------
-   fonts and colors */
-
-body {
-    font: 1rem sans-serif;
-    color: white;
-    background-color: #222;
-}
-
-h1 {
-    font: 2rem/2rem "The Girl Next Door", cursive;
-    padding: 0 .5rem;
-}
-
-/* decorative bits on the title */
-h1 .prompt {
-    font-family: monospace;
-}
-h1 .prompt:before {
-    /* this 'should' just be blue, but css blue on black is too dim to be legible, especially for a single character. and if you're wondering why this is blue and not cyan, well, the username is cyan and the directory name is blue... and the directory is blue because that's the default for ls --color */
-    color: slateblue;
-    content: '~';
-}
-h1 .prompt:after {
-    color: magenta;
-    content: '>';
-}
-
-pre, code {
-    font-family: monospace;
-}
-
-dt {
-    color: magenta;
-}
-
-a {
-    color: cyan;
-    text-decoration: none;
-}
-
-a:hover, a:active {
-    text-decoration: underline;
-    text-decoration-color: white;
-}
-
-svg>path {
-    fill: yellow;
 }
 
 #tenari p, #tenari a {
