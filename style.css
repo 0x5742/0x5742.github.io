@@ -42,8 +42,9 @@ body {
     overflow: hidden;
 }
 
+
 /* ----------------------------------------------------------------------------
-   main content grid (<dl id="links">) */
+   main page content grid (<dl id="links">) */
 
 #links {
     display: grid;
@@ -82,14 +83,27 @@ body {
 }
 
 h1 {
-    font-style: italic;
-    font-family: serif;
+    font: 2rem/2rem "The Girl Next Door", cursive;
+    padding: 0 .5rem;
+}
+
+/* decorative bits on the title */
+h1 .prompt {
+    font-family: monospace;
+}
+h1 .prompt:before {
+    /* this 'should' just be blue, but css blue on black is too dim to be legible, especially for a single character. and if you're wondering why this is blue and not cyan, well, the username is cyan and the directory name is blue... and the directory is blue because that's the default for ls --color */
+    color: slateblue;
+    content: '~';
+}
+h1 .prompt:after {
+    color: magenta;
+    content: '>';
 }
 
 pre, code {
     font-family: monospace;
 }
-
 
 dt {
     color: magenta;
