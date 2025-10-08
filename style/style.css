@@ -1,51 +1,71 @@
+@import "fonts.css";
+
+
 body {
+    font-family: "Aleo", sans-serif;
     margin: 0.5em 1em;
-    font: 1rem sans-serif;
-    color: white;
+    color: #fff;
     background-color: #222;
 }
 
 pre, code {
-    font-family: monospace;
+    font-family: "Monaspace Xenon Var", monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Info Story", "Comic Sans MS", "Comic Sans", cursive;
+}
+
+h2, h3, h4 {
+    color: #f5f;
 }
 
 dt {
-    color: magenta;
+    color: #dd3bdd;
+    font-weight: bold;
+}
+
+strong, em, h5, h6 {
+    color: #ff5;
 }
 
 a {
-    color: cyan;
+    color: #2bb;
     text-decoration: none;
 }
 
 a:hover, a:active {
+    color: #5ff;
     text-decoration: white underline;
 }
 
+/* annoying */
+h1 a, h1 a:hover, h1 a:active,
+h2 a, h2 a:hover, h2 a:active,
+h3 a, h3 a:hover, h3 a:active,
+h4 a, h4 a:hover, h4 a:active,
+h5 a, h5 a:hover, h5 a:active,
+h6 a, h6 a:hover, h6 a:active {
+    color: inherit;
+}
+
+
 /* mostly for landing page, but useful elsewhere too? */
 svg.icon>path, #links svg>path {
-    fill: yellow;
+    fill: #ff5;
 }
 
 
 /* page title */
 
-h1 {
-    font: 2rem/2rem "The Girl Next Door", cursive;
-    padding: 0 .5rem;
-}
-
 /* decorative bits */
-h1 .prompt {
-    font-family: monospace;
-}
-h1 .prompt:before {
+h1 code.prompt:before {
     /* this 'should' just be blue, but css blue on black is too dim to be legible, especially for a single character. and if you're wondering why this is blue and not cyan, well, the username is cyan and the directory name is blue... and the directory is blue because that's the default for ls --color */
-    color: steelblue;
+    color: #55f;
     content: '~/';
 }
-h1 .prompt:after {
-    color: magenta;
+h1 code.prompt:after {
+    color: #f5f;
     content: '>';
 }
 h1 a {
@@ -53,6 +73,15 @@ h1 a {
     text-decoration: none;
 }
 
+
+/* layout stuff */
+
+dd :first-child, dd svg:first-child + * {
+    margin-top: 0;
+}
+dd :last-child {
+    margin-bottom: 0;
+}
 
 /* ----------------------------------------------------------------------------
    landing page: list of links on left, art bit on bottom right */
@@ -111,6 +140,7 @@ h1 a {
     align-self: flex-end;
     margin-left: auto;
     position: relative;
+    overflow: hidden;
 }
 
 #tenari img {
@@ -126,7 +156,7 @@ h1 a {
     transform: rotate(90deg);
     position: absolute;
     bottom: 0;
-    right: 1rem;
+    right: 1.25rem;
     margin: .5em .25em;
     padding: 0;
     text-wrap: nowrap;
@@ -142,13 +172,13 @@ h1 a {
 }
 
 #tenari a {
-    color: #999;
+    color: #bbb;
 }
 
 #tenari:hover p, #tenari:active p {
-    color: magenta;
+    color: #f5f;
 }
 
 #tenari:hover a, #tenari:active a {
-    color: cyan;
+    color: #5ff;
 }
