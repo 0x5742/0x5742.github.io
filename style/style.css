@@ -49,6 +49,17 @@ h6 a, h6 a:hover, h6 a:active {
     color: inherit;
 }
 
+blockquote:before {
+    color: #555;
+    content: '❝';
+    margin-left: -2rem;
+    margin-top: -0.5rem;
+    font-size: 3rem;
+    position: relative;
+    float: left;
+}
+
+
 
 /* mostly for landing page, but useful elsewhere too? */
 svg.icon>path, #links svg>path {
@@ -60,7 +71,7 @@ svg.icon>path, #links svg>path {
 
 /* decorative bits */
 h1 code.prompt:before {
-    /* this 'should' just be blue, but css blue on black is too dim to be legible, especially for a single character. and if you're wondering why this is blue and not cyan, well, the username is cyan and the directory name is blue... and the directory is blue because that's the default for ls --color */
+    /* if you're wondering why this is blue and not cyan, well, the username is cyan and the directory name is blue... and the directory is blue because that's the default for ls --color */
     color: #55f;
     content: '~/';
 }
